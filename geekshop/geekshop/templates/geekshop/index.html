@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Магазин</title>
-	<link rel="stylesheet" type="text/css" href="/static/geekshop/style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'geekshop/style.css' %}">
 <!--	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">-->
 </head>
 <body>
@@ -14,12 +16,16 @@
 				<ul class="menu">
 					<li><a href='/' class="active">домой</a></li>
 					<li><a href="products/">продукты</a></li>
-					<li><a href="contacts/">контакты</a></li>
+					<li><a href="{% url 'contacts' %}">контакты</a></li>
 				</ul>
 				<a href="#" class="search"></a>
 			</div>
 			<div class="text-slider">
-				<h3 class="green">тенденции</h3>
+				<h3 class="green">тенденции {% now 'Y' %}</h3>
+
+				{{ user }}
+				{{ user.date_birth|date:'d m Y' }}
+
 				<h3 class="big"> удобные стулья</h3>
 				<p>Новый уровень комфорта. Отличные характеристики.</p>
 				<a href="#" class="button-order">заказать <img src="static/geekshop/img/arrow.png" alt=""></a>
