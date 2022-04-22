@@ -1,0 +1,5 @@
+[
+{"name": "Стул", "color": "Красный", "hight": 100, "width": 60, "weigth": 5, "quantity": 6},
+{"name": "Стол", "color": "Синий", "hight": 80, "width": 120, "weigth": 10, "quantity": 1},
+{"name": "Шкаф", "color": "Зеленый", "hight": 200, "width": 80, "weigth": 20, "quantity": 3}
+]
