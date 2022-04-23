@@ -2,11 +2,15 @@
     <a href="{% url 'index' %}" class="logo"></a>
 
     <ul class="menu">
-        {% for link in links_main_menu %}
-            <li><a href="{% url link.href %}"
-                class="{% if request.resolver_match.url_name == link.href %}active{% endif %}"
-                >{{ link.name }}</a></li>
-        {% endfor %}
+            <li><a href="{% url 'index' %}"
+                class="{% if request.resolver_match.route == '' %}active{% endif %}"
+                >Домой</a></li>
+            <li><a href="{% url 'products:index' %}"
+                class="{% if request.resolver_match.route == 'products/' %}active{% endif %}"
+                >Продукты</a></li>
+            <li><a href="{% url 'contacts' %}"
+                class="{% if request.resolver_match.route == 'contacts/' %}active{% endif %}"
+                >Контакты</a></li>
     </ul>
     <a href="#" class="search"></a>
     <a href="#" class="basket"></a>
