@@ -13,7 +13,9 @@
 
         <p align="right">
             {% now "SHORT_DATETIME_FORMAT" %}<br>
-            route={{ request.resolver_match.route}}, view_name={{request.resolver_match.view_name }}
+            user={{ user }},
+            route={{ request.resolver_match.route}},
+            view_name={{request.resolver_match.view_name }}
         </p>
 
 		{% block content %}
