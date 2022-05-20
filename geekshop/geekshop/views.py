@@ -1,11 +1,20 @@
 from django.shortcuts import render
+from mainapp.models import Product
 
-# Create your views here.
 
+context = {}
 
 def index(request):
-    return render(request, 'geekshop/index.html')
+    products = Product.objects.all()[:4]
+    context.update({
+        'title': 'Магазин : Главная',
+        'products': products,
+    })
+    return render(request, 'geekshop/index.html', context)
 
 
 def contacts(request):
-    return render(request, 'geekshop/contact.html')
+    context.update({
+        'title': 'Магазин : Контакты'
+    })
+    return render(request, 'geekshop/contact.html', context)

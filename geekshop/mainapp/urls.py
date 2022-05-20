@@ -1,5 +1,10 @@
-from django.urls import path, include
+from django.urls import path
+from .views import products
+
+
+app_name = 'mainapp'
 
 urlpatterns = [
-    # path('', ),
+    path('', products, name='index'),
+    # path('<int:pk>/', product, name='product'),
 ]
